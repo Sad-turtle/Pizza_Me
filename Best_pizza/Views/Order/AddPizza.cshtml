@@ -1,0 +1,30 @@
+﻿@model Best_pizza.Models.Pizza
+
+@{ ViewBag.Title = "AddPizza"; }
+
+<h2>Выбрать пиццу</h2>
+
+<div id="pizzaCard" class="card" style="width: 350px; display: inline-block; border: solid; border-color: lightgray; margin: 10px; background-color: whitesmoke">
+    @using (@Html.BeginForm("AddPizzaConfirmed", "Order", FormMethod.Post))
+    {
+<div class="card-body">
+    <h3 class="card-title" style="margin-left: 40px">@Html.DisplayFor(modelItem => Model.Name)</h3>
+    <img class="card-img-top" src="~/Images/@Html.DisplayFor(modelItem => Model.Picture)" width="200" height="150" alt="Card image cap" , style="margin-left: 75px">
+    <div id="pizzaDough" class="card-text">
+        <strong>Тесто:</strong> @Html.DisplayFor(modelItem => Model.Dough.Name)
+    </div>
+    <div id="pizzaDoughType">
+        <strong>Текстура:</strong> @Html.DisplayFor(modelItem => Model.DoughType.Name)
+    </div>
+    <div id="pizzaToppings">
+        <strong>Топинг:</strong> @Html.DisplayFor(modelItem => Model.ListOfToppings)
+    </div>
+
+    <div class="card-text" style="display: inline-block">
+        <strong>Цена:</strong> $@Html.DisplayFor(modelItem => Model.Price)
+    </div>
+    <br />
+    <input type="submit" value="Добавить в корзину" class="btn btn-danger" />
+</div>}
+</div>
+<div style="display: inline-block">@Html.ActionLink("На главную", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" }) &#127829;</div>

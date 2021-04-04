@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Главная";
+}
+
+<div class="jumbotron" id="homePage">
+    <h1>PizzaMe</h1>
+    <p class="lead">PizzaMe это онлайн вебсайт для заказа пиццы к вам домой. Мы готовы сделать пиццу компоненты которой вы выберите сами.</p>
+    <div style="display: inline-block">@Html.ActionLink("Выбери готовую пиццу", "Index", "Pizza", new { area = "" }, new { @class = "navbar-brand" }) &#127829;</div>
+    <div style="display: inline-block">@Html.ActionLink("Собери пиццу сам", "CreatePizza", "Pizza", new { area = "" }, new { @class = "navbar-brand" }) &#127829;</div>
+    <div style="display: inline-block">@Html.ActionLink("Корзина", "Index", "Order", new { area = "" }, new { @class = "navbar-brand" }) &#127829;</div>
+</div>

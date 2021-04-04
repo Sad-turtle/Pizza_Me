@@ -1,0 +1,53 @@
+﻿@model Best_pizza.Models.Register
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Логин</h2>
+
+@using (Html.BeginForm("Login", "Register", FormMethod.Post))
+{
+    <table width="100%">
+        <tr>
+            <td align="center">
+                <table class="table-condensed">
+                    <tr>
+                        <td align="left">
+                            @Html.LabelFor(m => m.Email)
+                        </td>
+                        <td align="right">
+                            @Html.TextBoxFor(m => m.Email)
+                            &nbsp;&nbsp;
+                            <br />
+                            @Html.ValidationMessageFor(m => m.Email)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="left">
+                            @Html.Label("Password", "Пароль")
+                        </td>
+                        <td align="right">
+                            @Html.EditorFor(m => m.Password)
+                            &nbsp;&nbsp;
+                            <br />
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Login" class="btn btn-primary" />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                @ViewBag.ErrorMessage;
+            </td>
+        </tr>
+    </table>
+
+
+}
+
